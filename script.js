@@ -33,7 +33,7 @@ function showTamanoOptions(ubicacion) {
         document.getElementById('ambas_grande_option').style.display = 'flex';
     }
     document.getElementById('tamano').value = '';
-    document.getElementById('tamanoOptions').style.display = 'flex';
+    document.getElementById('tamanoOptions').style.display = 'block';
 }
 
 function setTamano(tamano) {
