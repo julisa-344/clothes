@@ -1,0 +1,188 @@
+*{
+    box-sizing: border-box;
+    font-size: 16.5%;
+}
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin: 20px;
+    padding: 20px;
+    background: rgb(209,81,233);
+    background: linear-gradient(163deg, rgba(209,81,233,1) 0%, rgba(28,12,54,1) 100%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width: 80%;
+    min-height: 80vh;
+    padding: 16px;
+    background-color: #f3f3f369;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    display: grid;
+    place-content: center;
+}
+h1 {
+    font-family: "Passion One", sans-serif;
+    text-align: center;
+    color: #000;
+    font-size: 20rem;
+    margin-bottom: 12px;
+}
+#selectedProductTitle{
+    font-size: 14rem;
+    margin: 0;
+}
+.section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: "Heebo", sans-serif;
+    color: #000;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 10rem;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.product-option, .color-option, .ubicacion-option, .tamano-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+#productSelection img, #options img {
+    width: 250px;
+    height: 250px;
+    margin: 25px 10px;
+    padding: 5px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+#productSelection img:hover, #options img:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+label, select, input, button {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.btn-back{
+    position: absolute;
+}
+.btn-calcular{
+    background-color: #fff;
+    color: #333;
+    font-size: 8rem;
+    margin: 0 auto;
+}
+.btn-back img {
+    width: 25px;
+}
+
+#result, #unitPrice {
+    margin-top: 20px;
+    padding: 10px;
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.option img {
+    opacity: 0.5;
+}
+
+.option.selected img {
+    opacity: 1;
+}
+
+img {
+    cursor: pointer;
+}
+
+#tallaOptions button {
+    margin-right: 10px;
+}
+
+#tallaOptions .selected {
+    border: 3px solid #333;
+    box-shadow: 0 0 8px #333;
+}
+
+.product-option span, .color-option span, .ubicacion-option span, .tamano-option span {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.talla-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.talla-buttons button {
+    margin: 0 5px;
+}
+
+.option-button {
+    padding: 10px 20px;
+    font-size: 8rem;
+    background-color: #D5B7C7;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+
+.option-button.selected {
+    border: 3px solid #4CAF50;
+    box-shadow: 0 0 8px #4CAF50;
+}
+.input {
+    width: 60%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #D5B7C7;
+    font-size: 10rem;
+    border: #333;
+    border-radius: 8px;
+}

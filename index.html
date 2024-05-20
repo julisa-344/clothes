@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Precios de Impresión</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <button type="button" onclick="backToSelection()" class="btn-back"><img src="./src/back.png" alt="regresar"></button>
+        <div>
+            <h1>Calculadora de Precios de Polos</h1>
+        </div>
+        <div class="section">
+            <div class="section-title">Selecciona un producto:</div>
+            <div id="productSelection" class="options-container">
+                <div class="product-option option" id="polo_basico_option">
+                    <span class="option-label">Polo Básico</span>
+                    <img src="./src/optimg1.png" alt="Polo Básico" onclick="selectProduct('polo_basico')" />
+                </div>
+                <div class="product-option option" id="polo_acid_washed_option">
+                    <span class="option-label">Polo Acid Washed</span>
+                    <img src="./src/optimg2.png" alt="Polo Acid Washed" onclick="selectProduct('polo_acid_washed')" />
+                </div>
+                <div class="product-option option" id="polo_oversize_option">
+                    <span class="option-label">Polo Oversize</span>
+                    <img src="./src/optimg3.png" alt="Polo Oversize" onclick="selectProduct('polo_oversize')" />
+                </div>
+            </div>
+        </div>
+    
+        <div id="options" class="form-container" style="display: none">
+            <h2 id="selectedProductTitle"></h2>
+            <form id="priceCalculator">
+                <input  class="input" type="hidden" id="product" name="product" />
+    
+                <div class="section" id="colorOptions">
+                    <div class="section-title">Color del Polo:</div>
+                    <div class="options-container">
+                        <div class="color-option option" id="blanco_option">
+                            <span class="option-label">Blanco</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/blanco.png?v=1716076548543" id="blanco" alt="Blanco" onclick="setColor('blanco')" />
+                        </div>
+                        <div class="color-option option" id="colores_option">
+                            <span class="option-label">A Colores</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/color.png?v=1716076547927" id="colores" alt="A Colores" onclick="setColor('colores')" />
+                        </div>
+                    </div>
+                    <input class="input" type="hidden" id="color" name="color" />
+                </div>
+    
+                <div class="section" id="ubicacionOptions">
+                    <div class="section-title">Ubicación del Estampado:</div>
+                    <div class="options-container">
+                        <div class="ubicacion-option option" id="solo_adelante_option">
+                            <span class="option-label">Solo Adelante</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/polo_adelante.png?v=1716082102173" alt="Solo Adelante" id="solo_adelante" onclick="setUbicacion('solo_adelante')" />
+                        </div>
+                        <div class="ubicacion-option option" id="ambas_option">
+                            <span class="option-label">Ambas</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/polo_ambas.png?v=1716082101473" alt="Ambas" id="ambas" onclick="setUbicacion('ambas')" />
+                        </div>
+                    </div>
+                    <input class="input" type="hidden" id="ubicacion" name="ubicacion" />
+                </div>
+    
+                <div class="section" id="tamanoOptions" style="display: none">
+                    <div class="section-title">Tamaño del Estampado:</div>
+                    <div class="options-container">
+                        <!-- Opciones para "Solo Adelante" -->
+                        <div class="tamano-option option" id="solo_adelante_mediano_option">
+                            <span class="option-label">Mediano Adelante</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/adelante_mediano.png?v=1716083232973" alt="Mediano Adelante" id="solo_adelante_mediano" onclick="setTamano('mediano')" />
+                        </div>
+                        <div class="tamano-option option" id="solo_adelante_grande_option">
+                            <span class="option-label">Grande Adelante</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/adelante_grande.png?v=1716083232533" alt="Grande Adelante" id="solo_adelante_grande" onclick="setTamano('grande')" />
+                        </div>
+                        <!-- Opciones para "Ambas" -->
+                        <div class="tamano-option option" id="ambas_mediano_option">
+                            <span class="option-label">Mediano Ambas</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/ambas_mediano.png?v=1716083234195" alt="Mediano Ambas" id="ambas_mediano" onclick="setTamano('mediano')" />
+                        </div>
+                        <div class="tamano-option option" id="ambas_grande_option">
+                            <span class="option-label">Grande Ambas</span>
+                            <img src="https://cdn.glitch.global/9fe42afd-86e3-434b-9ab4-feaeba74fac6/ambas_grande.png?v=1716083233471" alt="Grande Ambas" id="ambas_grande" onclick="setTamano('grande')" />
+                        </div>
+                    </div>
+                    <input class="input" type="hidden" id="tamano" name="tamano" />
+                </div>
+    
+                <div class="section" id="tallaOptions">
+                    <div class="section-title">Talla del Polo:</div>
+                    <div class="options-container">
+                        <button type="button" class="option-button" onclick="setTalla('M')">M</button>
+                        <button type="button" class="option-button" onclick="setTalla('L')">L</button>
+                        <button type="button" class="option-button" onclick="setTalla('XL')">XL</button>
+                    </div>
+                    <input class="input" type="hidden" id="talla" name="talla" />
+                </div>
+    
+                <div class="section">
+                    <div class="section-title">Número de Unidades:</div>
+                    <div class="form-group">
+                        <input class="input" type="number" id="unidades" name="unidades" min="1" value="1" />
+                    </div>
+                </div>
+    
+                <button class="btn-calcular" type="button" onclick="calculatePrice()">Calcular Precio</button>
+            </form>
+            <div class="input" id="result"></div>
+            <div class="input" id="unitPrice"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
